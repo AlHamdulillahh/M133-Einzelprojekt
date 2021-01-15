@@ -1,0 +1,15 @@
+<%- await include('views/includes/header.ejs', { title: 'Einkauf erfolgreich abgeschlossen' }) %>
+
+<div class="container-fluid justify-content-center text-center">
+    <p><%= message %></p>
+    <img src="/img/tick.png" alt="">
+    <br>
+    <br>
+    <a href="/">Zurück zum Shop</a>
+</div>
+
+<script>
+    setTimeout(function () {
+        window.location = "http://localhost:8000";
+    }, 3000);
+</script>

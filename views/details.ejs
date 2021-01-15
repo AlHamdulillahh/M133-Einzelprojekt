@@ -1,0 +1,22 @@
+<%- await include('views/includes/header.ejs', { title: 'Details - ' + product.productName }) %>
+<%- await include('views/includes/head.ejs') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/img/<%= product.imageName %>" height="150px" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h1><%= product.productName %></h1>
+
+            <p><%= product.description %></p>
+
+            <p>CHF <%= product.specialOffer.toFixed(2) %> <del class="text-danger">CHF <%= product.normalPrice.toFixed(2) %></del></p>
+
+            <button class="btn btn-outline-danger" onclick="addToCart(`<%= product.id %>`)">Zum Warenkorb hinzufügen</button>
+        </div>
+    </div>
+</div>
+
+<%- await include('views/includes/footer.ejs') %>
