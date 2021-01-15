@@ -124,10 +124,8 @@ router
       proInCart.amount--;
       proInCart.total = proInCart.unitPrice * proInCart.amount;
     }
-
-    let newCart = await context.state.session.get("cart");
+    
     await context.state.session.set("cart", cart);
-    console.log(cart);
     context.response.body = cart;
   })
   // Checkout
